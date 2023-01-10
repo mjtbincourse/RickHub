@@ -1,0 +1,122 @@
+local Library =
+    loadstring(
+    game:HttpGet(
+        "https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"
+    )
+)()
+
+local Window =
+    Library:CreateWindow(
+    "RickHub",
+    "Snow Plow Simulator",
+    "Visual UI Library",
+    "rbxassetid://10618928818",
+    false,
+    "VisualUIConfigs",
+    "Default"
+)
+
+local Tab = Window:CreateTab("Main", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Main")
+
+local Button =
+    Section:CreateButton(
+    "Gem Farm",
+    function()
+        local Gems = game:GetService("Workspace").Gems
+        local LP = game:GetService("Players").LocalPlayer.Character
+
+        while task.wait() do
+            for _, v in pairs(Gems:GetDescendants()) do
+                if v:IsA("TouchTransmitter") then
+                    firetouchinterest(LP.HumanoidRootPart, v.Parent, 0)
+                    firetouchinterest(LP.HumanoidRootPart, v.Parent, 1)
+                end
+            end
+        end
+        print("Activated!")
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "Snow Farm(Lags Your Game)",
+    function()
+        local Snow = game:GetService("Workspace").HitParts
+        while task.wait() do
+            for _, v in pairs(Snow:GetChildren()) do
+                if v.Name == "Snow" then
+                    game:GetService("ReplicatedStorage").Events.HitPart:FireServer(v)
+                end
+            end
+        end
+        print("Activated!")
+    end
+)
+
+local Tab = Window:CreateTab("Spawns, Etc", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Spawns, Etc")
+
+local Button =
+    Section:CreateButton(
+    "Spawn All Car Types",
+    function()
+        local CarSpawn = game:GetService("ReplicatedStorage").Shop.Events.SpawnCar
+        local Cars = {
+            "1 Snowmobile",
+            "2 Tahoe",
+            "3 Tahoe V",
+            "4 Snow Plow",
+            "5 Snow Plow V",
+            "6 Big Tractor",
+            "7 Huge Tractor",
+            "8 Grader"
+        }
+        while task.wait() do
+            for _, Car in ipairs(Cars) do
+                CarSpawn:FireServer(Car)
+            end
+        end
+        print("Activated!")
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "Infinite Money/Rebirths",
+    function()
+        game:GetService("ReplicatedStorage").Shop.Events.BuyItem:FireServer(-999999999999999, "1 Stick", true) -- Money
+        game:GetService("ReplicatedStorage").RebirthEvent:FireServer(100000) -- Rebirths
+        print("Activated!")
+    end
+)
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function(s)
+    end
+)
+local Button =
+    Section:CreateButton(
+    "Bannable#0001",
+    function(s)
+    end
+)
+local Button =
+    Section:CreateButton(
+    "• ボ blackout#0001",
+    function(s)
+    end
+)
