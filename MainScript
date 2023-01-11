@@ -1,6 +1,14 @@
-if game.PlaceId == 11701792069 then 
+if game.PlaceId == 11701792069 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/SnowPlotSim"))()
-else if game.PlaceId == 11859164809
-    then loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/PirateKing"))()
-end
+else
+    if game.PlaceId == 11859164809 then
+    else
+        if game.PlaceId == 9216815133 then
+            loadstring(
+                game:HttpGet(
+                    "https://raw.githubusercontent.com/mjtbincourse/RickHub/main/%5BUpdate%5D%20Trollge%20Conventions"
+                )
+            )()
+        end
+    end
 end
