@@ -1,31 +1,62 @@
-local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua'))()
+local Library =
+    loadstring(
+    game:HttpGet(
+        "https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"
+    )
+)()
 
-local Window = Library:CreateWindow('RickHub', 'Trollge Convention', 'Visual UI Library', 'rbxassetid://10618928818', false, 'VisualUIConfigs', 'Default')
+local Window =
+    Library:CreateWindow(
+    "RickHub",
+    "Trollge Convention",
+    "Visual UI Library",
+    "rbxassetid://10618928818",
+    false,
+    "VisualUIConfigs",
+    "Default"
+)
 
-local Tab = Window:CreateTab('Main', true, 'rbxassetid://3926305904', Vector2.new(524, 44), Vector2.new(36, 36))
+local Tab = Window:CreateTab("Main", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
 
-local Section = Tab:CreateSection('Main')
+local Section = Tab:CreateSection("Main")
 
-local Button = Section:CreateButton('AutoFarm Chests', function()game:getService("RunService"):BindToRenderStep("",0,function()
-if not game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid") then return end
-if game:getService("UserInputService"):IsKeyDown(Enum.KeyCode.V) then
-game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
-end
-end)
-while task.wait(2) do
-tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(2, Enum.EasingStyle.Linear)
+local Button =
+    Section:CreateButton(
+    "AutoFarm Chests",
+    function()
+        game:getService("RunService"):BindToRenderStep(
+            "",
+            0,
+            function()
+                if not game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid") then
+                    return
+                end
+                if game:getService("UserInputService"):IsKeyDown(Enum.KeyCode.V) then
+                    game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid"):ChangeState(11)
+                end
+            end
+        )
+        while task.wait(2) do
+            tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(2, Enum.EasingStyle.Linear)
 
-tween = tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart, tweenInfo, {CFrame = CFrame.new(game:GetService("Workspace").chests["Chest_p"].Position)})
-tween:Play()
-    for i,v in pairs(game:GetService("Workspace").chests:GetChildren())do
-        if v:IsA("Part") and v.Name == "Chest_p" then
-    fireproximityprompt(v.ProximityPrompt)
+            tween =
+                tweenService:Create(
+                game:GetService("Players")["LocalPlayer"].Character.HumanoidRootPart,
+                tweenInfo,
+                {CFrame = CFrame.new(game:GetService("Workspace").chests["Chest_p"].Position)}
+            )
+            tween:Play()
+            for i, v in pairs(game:GetService("Workspace").chests:GetChildren()) do
+                if v:IsA("Part") and v.Name == "Chest_p" then
+                    fireproximityprompt(v.ProximityPrompt)
+                end
+            end
+        end
     end
-    end
-end
-end)
+)
 
-local Paragraph = Section:CreateParagraph('NOTICE!', 'Autofarm may break sometimes so you may have to tap the buton again!')
+local Paragraph =
+    Section:CreateParagraph("NOTICE!", "Autofarm may break sometimes so you may have to tap the buton again!")
 
 local Tab = Window:CreateTab("Credits", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
 
@@ -42,4 +73,5 @@ local Button =
     Section:CreateButton(
     "mjtbincourse#9563(Epik Scripter)",
     function(s)
-  end)
+    end
+)
