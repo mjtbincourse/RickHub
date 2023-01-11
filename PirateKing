@@ -1,0 +1,82 @@
+local Library =
+    loadstring(
+    game:HttpGet(
+        "https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"
+    )
+)()
+
+local Window =
+    Library:CreateWindow(
+    "RickHub",
+    "Pirate King",
+    "Visual UI Library",
+    "rbxassetid://10618928818",
+    false,
+    "VisualUIConfigs",
+    "Default"
+)
+
+local Tab = Window:CreateTab("Main", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Spawns")
+
+local Button =
+    Section:CreateButton(
+    "Spawn 5 Fruits",
+    function()
+        for i = 1, 5 do
+            local A_1 = "Legendary"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+            local A_1 = "Mythical"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+            local A_1 = "Epic"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+        end
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "Instant Crash",
+    function()
+        for i = 1, math.huge do
+            local A_1 = "Legendary"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+            local A_1 = "Mythical"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+            local A_1 = "Epic"
+            game:GetService("Players").LocalPlayer.PlayerGui.SpinGui.LOL.Spin.Spin.Reward:FireServer(A_1)
+        end
+    end
+)
+
+local Section = Tab:CreateSection("Drop All Fruits")
+
+local Button =
+    Section:CreateButton(
+    "Drop!",
+    function()
+        for _, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            v.Parent = game.Players.LocalPlayer.Character
+            v.Parent = workspace
+        end
+    end
+)
+
+local Tab = Window:CreateTab("Credits", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function(s)
+    end
+)
