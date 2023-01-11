@@ -46,8 +46,11 @@ local Button =
                 {CFrame = CFrame.new(game:GetService("Workspace").chests["Chest_p"].Position)}
             )
             tween:Play()
-            for i, v in pairs(game:GetService("Workspace").chests:GetChildren()) do
-                if v:IsA("Part") and v.Name == "Chest_p" then
+            for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+                if
+                    v:IsA("Part") and v.Name == "Chest_p" or v.Name == "Light Chest_p" or V.Name == "Dark Chest_p" or
+                        V.name == "Blood Chests_P"
+                 then
                     fireproximityprompt(v.ProximityPrompt)
                 end
             end
