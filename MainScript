@@ -9,6 +9,10 @@ else
                     "https://raw.githubusercontent.com/mjtbincourse/RickHub/main/%5BUpdate%5D%20Trollge%20Conventions"
                 )
             )()
+        else
+            if game.placeID == 10598963932 then
+                loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/Cat%20Piece"))()
+            end
         end
     end
 end
