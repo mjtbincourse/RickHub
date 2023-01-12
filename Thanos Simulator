@@ -1,0 +1,112 @@
+local Library =
+    loadstring(
+    game:HttpGet(
+        "https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"
+    )
+)()
+
+local Window =
+    Library:CreateWindow(
+    "RickHub",
+    "Thanos Simulator",
+    "Visual UI Library",
+    "rbxassetid://10618928818",
+    false,
+    "VisualUIConfigs",
+    "Default"
+)
+
+local Tab = Window:CreateTab("Main", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Main")
+
+local Button =
+    Section:CreateButton(
+    "HitBox",
+    function()
+        task.wait()
+        do
+            for _, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                if v.Name == "NPC" then
+                    v.HumanoidRootPart.Size = Vector3.new(30, 30, 30)
+                     -- change this three numbers to any numbers you want(higher the bigger)
+                    v.HumanoidRootPart.Material = "Neon"
+                    v.HumanoidRootPart.BrickColor = BrickColor.new("Really blue")
+                    v.HumanoidRootPart.Transparency = 0.7
+                    v.HumanoidRootPart.CanCollide = false
+                end
+            end
+        end
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "Speed",
+    function()
+        task.wait()
+        do
+            local walkSpeed = 50
+
+            local gmt = getrawmetatable(game)
+
+            setreadonly(gmt, false)
+
+            local oldindex = gmt.__index
+
+            gmt.__index =
+                newcclosure(
+                function(self, b)
+                    if b == "WalkSpeed" then
+                        return 16
+                    end
+
+                    return oldindex(self, b)
+                end
+            )
+
+            game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
+        end
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "Get All 3 stones",
+    function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+            CFrame.new(444, 114.499878, 443, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        --TimeStone
+        task.wait()
+        do
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                CFrame.new(-412.000061, 71.5, -444.000061, 1, 0, 0, 0, 1, 0, 0, 0, 1) --SpaceStone
+            task.wait()
+            do
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    CFrame.new(-420, 11.5, 690, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+                --RealityStone
+            end
+        end
+    end
+)
+
+local Paragraph = Section:CreateParagraph("Warning!", "Epik Scripter is very hot")
+
+local Tab = Window:CreateTab("Credits", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function()
+    end
+)
