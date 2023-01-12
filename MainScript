@@ -12,6 +12,12 @@ else
         else
             if game.placeID == 10598963932 then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/Cat%20Piece"))()
+            else
+                if game.placeID == 3261957210 then
+                    loadstring(
+                        game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/Thanos%20Simulator")
+                    )()
+                end
             end
         end
     end
