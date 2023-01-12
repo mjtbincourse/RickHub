@@ -2,6 +2,7 @@ if game.PlaceId == 11701792069 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/SnowPlotSim"))()
 else
     if game.PlaceId == 11859164809 then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/PirateKing"))()
     else
         if game.PlaceId == 9216815133 then
             loadstring(
