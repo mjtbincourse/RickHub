@@ -1,7 +1,3 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/tip52/useless-projects/main/notif%20lib.lua'))()
-
-notif(12128586570,"RickHub","Thank you for using the Hub!",5)
-
 local games = {
   Snowplot = 11701792069,
   PirateKing = 11859164809,
