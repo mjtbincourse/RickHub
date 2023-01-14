@@ -1,2 +1,2 @@
 # RickHub
-Epik Script Is hot!!!!
+Epik Scripter Is hot!!!!
