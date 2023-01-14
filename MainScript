@@ -5,7 +5,8 @@ local games = {
     CatPiece = 10598963932,
     Thanos = 3261957210,
     SpeedSim = 7026828578,
-    TowerMerge = 11523066819
+    TowerMerge = 11523066819,
+    MissionMars = 10840095864
 }
 
 if (game.PlaceId == games.Snowplot) then
@@ -25,5 +26,9 @@ elseif (game.PlaceId == games.SpeedSim) then
 else
     if (game.PlaceId == games.TowerMerge) then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/TowerMerge"))()
+    else
+        if (game.PlaceId == games.MissionMars) then
+            loadstring(game:HttpGet("https://github.com/mjtbincourse/RickHub/blob/main/Mission:Mars"))()
+        end
     end
 end
