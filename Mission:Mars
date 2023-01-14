@@ -20,3 +20,19 @@ for _,v in pairs(badges) do
     game:GetService("ReplicatedStorage").Remotes.Events.Profile.AwardBadge:FireServer(v)
 end
 end)
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function(s)
+    end
+)
