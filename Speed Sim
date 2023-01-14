@@ -27,3 +27,21 @@ local Button =
         game:GetService("ReplicatedStorage").GlobalFunctions.AddPlayerSpeed:FireServer(0, 99999999999)
     end
 )
+
+local Tab = Window:CreateTab("Credits", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function()
+    end
+)
