@@ -30,6 +30,7 @@ else
     else
         if (game.PlaceId == games.MissionMars) then
             loadstring(game:HttpGet("https://github.com/mjtbincourse/RickHub/blob/main/Mission:Mars"))()
+        else
             if (game.PlaceId == games.ShindoLife) then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/ShindoLife"))()
             end
