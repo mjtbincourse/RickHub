@@ -1,0 +1,108 @@
+local Library =
+    loadstring(
+    game:HttpGet(
+        "https://raw.githubusercontent.com/VisualRoblox/Roblox/main/UI-Libraries/Visual%20UI%20Library/Source.lua"
+    )
+)()
+
+local Window =
+    Library:CreateWindow(
+    "RickHub",
+    "Ro Fruit",
+    "Visual UI Library",
+    "rbxassetid://10618928818",
+    false,
+    "VisualUIConfigs",
+    "Default"
+)
+
+local Tab = Window:CreateTab("Main", true, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Main")
+
+local Toggle =
+    Section:CreateToggle(
+    "InstaKill",
+    false,
+    Color3.fromRGB(0, 125, 255),
+    0.25,
+    function(Value)
+        getgenv().InstaKill = Value
+        if getgenv().InstaKill == true then
+            game:GetService("RunService").Stepped:connect(
+                function()
+                    game:GetService("Workspace").FallenPartsDestroyHeight = 0 / 0
+                    sethiddenproperty(game:GetService("Players").LocalPlayer, "SimulationRadius", 1000)
+                end
+            )
+
+            game:GetService("RunService").Stepped:connect(
+                function()
+                    for i, v in pairs(game:GetService("Workspace").Mob:GetChildren()) do
+                        local H = v:FindFirstChildWhichIsA("Humanoid")
+                        if H and H.Health < H.MaxHealth then
+                            H.Health = 0
+                        end
+                    end
+                end
+            )
+        end
+    end
+)
+Enabled = false
+
+local Toggle =
+    Section:CreateToggle(
+    "AutoHit",
+    true,
+    Color3.fromRGB(0, 125, 255),
+    0.25,
+    function(Value)
+        getgenv().AutoHit = Value
+        while getgenv().AutoHit do
+            task.wait()
+            game:GetService("ReplicatedStorage").Document.Combat.Combat:FireServer()
+        end
+    end
+)
+Enabled = false
+
+local Toggle =
+    Section:CreateToggle(
+    "AutoFruit",
+    false,
+    Color3.fromRGB(0, 125, 255),
+    0.25,
+    function(Value)
+        getgenv().AutoFruit = Value
+        while getgenv().AutoFruit do
+            task.wait()
+            if game:GetService("Players").LocalPlayer.Data.Beli.Value > 250000 then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                    game:GetService("Workspace").Island["DF island"].TOp.CFrame
+                fireproximityprompt(
+                    game:GetService("Workspace").Island["DF island"]["Fruit Gacha"].Part.ProximityPrompt
+                )
+            end
+        end
+    end
+)
+Enabled = false
+
+local Tab = Window:CreateTab("Credits", false, "rbxassetid://3926305904", Vector2.new(524, 44), Vector2.new(36, 36))
+
+local Section = Tab:CreateSection("Credits")
+
+local Button =
+    Section:CreateButton(
+    "Rick Astley#3006(Owner)",
+    function(s)
+    end
+)
+
+local Button =
+    Section:CreateButton(
+    "mjtbincourse#9563(Epik Scripter)",
+    function(s)
+    end
+)
