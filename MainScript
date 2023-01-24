@@ -1,4 +1,7 @@
-local notifLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Notification%20Library/main.lua"))()
+local notifLib =
+    loadstring(
+    game:HttpGet("https://raw.githubusercontent.com/Sw1ndlerScripts/RobloxScripts/main/Notification%20Library/main.lua")
+)()
 local games = {
     Snowplot = 11701792069,
     PirateKing = 11859164809,
@@ -9,7 +12,8 @@ local games = {
     TowerMerge = 11523066819,
     MissionMars = 10840095864,
     ShindoLife = 4616652839,
-    RoFruit = 10804519995
+    RoFruit = 10804519995,
+    ZombieMerge = 11196588443
 }
 
 if (game.PlaceId == games.Snowplot) then
@@ -38,15 +42,25 @@ else
             else
                 if (game.PlaceId == games.RoFruit) then
                     loadstring(game:HttpGet("https://raw.githubusercontent.com/mjtbincourse/RickHub/main/Ro%20Fruit"))()
+                else
+                    if (game.PlaceId == games.ZombieMerge) then
+                        loadstring(
+                            game:HttpGet(
+                                "https://raw.githubusercontent.com/mjtbincourse/RickHub/main/Zombie%20Merge%20Tycoon"
+                            )
+                        )()
+                    end
                 end
             end
         end
     end
 end
 
-notifLib:CreateDefaultNotif({
- TweenSpeed = 1,
- Title = "RickHub",
- Text = "loadstring Loaded Succesfully!",
- Duration = 5
-})
+notifLib:CreateDefaultNotif(
+    {
+        TweenSpeed = 1,
+        Title = "RickHub",
+        Text = "loadstring Loaded Succesfully!",
+        Duration = 5
+    }
+)
