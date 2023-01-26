@@ -7,7 +7,7 @@ local Library =
 
 local Window =
     Library:CreateWindow(
-    "RickHub",
+    "RickHub v1",
     "Shindo Life",
     "Visual UI Library",
     "rbxassetid://10618928818",
