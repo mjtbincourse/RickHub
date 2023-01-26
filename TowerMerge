@@ -25,7 +25,7 @@ end
 
 local Window =
     Library:CreateWindow(
-    "RickHub",
+    "RickHub v1",
     "Tower Merge Simulator",
     "Visual UI Library",
     "rbxassetid://10618928818",
